@@ -1,0 +1,84 @@
+.icon::after, .icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px!important;
+}
+
+.bars::before {
+    font: var(--fa-font-solid);
+    content: '\f0c9';
+    margin-right: 8px;
+}
+
+.person::before {
+    font: var(--fa-font-solid);
+    content: '\f007';
+    margin-right: 8px;
+}
+
+.pen::before {
+    font: var(--fa-font-solid);
+    content: '\f304';
+    margin-right: 8px;
+}
+
+.bin::before {
+    font: var(--fa-font-solid);
+    content: '\f1f8';
+    margin-right: 8px;
+}
+
+.house::before {
+    font: var(--fa-font-solid);
+    content: '\f015';
+    margin-right: 8px;
+}
+
+.upload::before {
+    font: var(--fa-font-solid);
+    content: '\f093';
+    margin-right: 8px;
+}
+
+.book::before {
+    font: var(--fa-font-solid);
+    content: '\f02d';
+    margin-right: 8px;
+}
+
+.syntax::before {
+    font: var(--fa-font-solid);
+    content: '\f121';
+    margin-right: 8px;
+}
+
+.arrowl::before {
+    font: var(--fa-font-solid);
+    content: '\f0d9';
+    margin-right: 8px;
+}
+
+.arrowr::before {
+    font: var(--fa-font-solid);
+    content: '\f0da';
+    margin-right: 8px;
+}
+
+.markbold::before {
+    font: var(--fa-font-solid);
+    content: '\f032';
+    margin-right: 8px;
+}
+
+.markitalic::before {
+    font: var(--fa-font-solid);
+    content: '\f033';
+    margin-right: 8px;
+}
+
+.markdown::before {
+    font: var(--fa-font-solid);
+    content: '\f0d7';
+    margin-right: 8px;
+}

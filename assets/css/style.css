@@ -1,0 +1,228 @@
+@import url(variables.css);
+@import url(reset.css);
+@import url(font.css);
+@import url(icon.css);
+
+html {
+    background-color: var(--color-neutral);
+    color: var(--color-contrast);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-contrast);
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 100px;
+    height: fit-content;
+    width: 100%;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-contrast);
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+    box-shadow: var(--box-shadow);
+}
+
+.logo {
+    height: 100px;
+    padding-right: 200px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+
+#profile-button {
+    position: relative;
+}
+
+nav button {
+    width: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#profile-button:hover {
+    background-color: var(--color-secondary);
+    box-shadow: var(--box-shadow);
+}
+
+#profile-menu {
+    display: none;
+    position: absolute;
+    background: var(--color-primary);
+    border: 2px solid var(--color-contrast);
+    padding: 20px;
+    top: 100%;
+    left: 94%;
+    transform: translateX(-60%);
+    min-width: 100px;
+    width: fit-content;
+}
+
+#profile-menu a {
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#profile-menu a:last-child {
+    margin-bottom: 0;
+}
+
+#profile-menu a:hover {
+    font-weight: bold;
+}
+
+#profile-button.active {
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-contrast);
+}
+
+.show-menu {
+    display: block !important;
+}
+
+main {
+    background-color: var(--color-primary);
+    min-height: 200px;
+    min-width: 200px;
+    width: 94%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: left;
+    gap: 20px;
+}
+
+footer {
+    background: var(--color-primary);
+    background-image: url('/assets/img/Lines.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid var(--color-secondary);
+}
+
+#carousel {
+    display: flex;
+    width: 100%;
+}
+
+/* Add / Edit Post */
+
+#add-post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 200px;
+    gap: 20px;
+}
+
+.post-button {
+    width: fit-content;
+    padding: 10px;
+}
+
+input {
+    border: 3px solid var(--color-contrast);
+    min-height: 20px;
+}
+
+.label-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.content-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    background: var(--color-neutral);
+    padding: 10px;
+    gap: 5px;
+    border-top: 3px solid var(--color-contrast);
+    border-left: 3px solid var(--color-contrast);
+    border-right: 3px solid var(--color-contrast);
+}
+
+.toolbar button {
+    background: var(--color-neutral);
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background: var(--color-primary);
+}
+
+#body-editor {
+    border: 3px solid var(--color-contrast);
+    background: var(--color-neutral);
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#body-editor:focus {
+    outline: none;
+}
+
+h1 { font-size: 48px; font-family: 'Poppins', sans-serif; }
+h2 { font-size: 32px; font-family: 'Poppins', sans-serif; }
+h3 { font-size: 24px; font-family: 'Poppins', sans-serif; }
+h4 { font-size: 20px; font-family: 'Poppins', sans-serif; }
+h5 { font-size: 18px; font-family: 'Poppins', sans-serif; }
+h6 { font-size: 16px; font-family: 'Poppins', sans-serif; }
+
+.large { font-size: 20px; font-family: 'Roboto', sans-serif; }
+.medium { font-size: 18px; font-family: 'Roboto', sans-serif; }
+.normal { font-size: 16px; font-family: 'Roboto', sans-serif; }
+
+pre, code {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    background: #f4f4f4;
+    padding: 5px;
+    border-radius: 5px;
+}
