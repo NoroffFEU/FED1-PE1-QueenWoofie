@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const pathPrefix = window.location.pathname === "/index.html" || window.location.pathname === "/"
-        ? "/account/"
+        ? "./account/"
         : "../account/";
 
     profileMenu.innerHTML = "";
