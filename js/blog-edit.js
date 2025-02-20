@@ -57,7 +57,7 @@ async function updatePost() {
         title: document.getElementById("title").value.trim(),
         body: document.getElementById("body-editor").value.trim(),
         media: {
-            url: document.getElementById("image").value.trim(),
+            url: document.getElementById("img").value.trim(),
             alt: "User updated image"
         }
     };
