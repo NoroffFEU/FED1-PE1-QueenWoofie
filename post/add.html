@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post</title>
+    <title>Add Post</title>
     <script src="/js/auth.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://kit.fontawesome.com/b080322150.css" crossorigin="anonymous">
@@ -22,12 +22,28 @@
         <script src="/js/profile.js"></script>
     </header>
     <main>
-        <div id="post-container" class="text normal">
+        <h1>Add Post</h1>
+            <form id="add-post-form">
+                <div class="label-group"> 
+                    <label for="title" class="large text bold">Title:</label>
+                    <input type="text" id="title" placeholder="Enter your post title" required>
+                </div>
 
-        </div>
-        <a href="/index.html"><button class="back-button text small bold">← Back to Blog</button></a>
-        
-        <script src="/js/blog-post.js"></script>
+                <div class="label-group"> 
+                    <label for="body" class="large text bold">Body:</label>
+                    <textarea id="body-editor" name="body" placeholder="Enter your body" required></textarea>
+                </div>
+
+                <div class="label-group"> 
+                    <label for="image" class="large text bold">Banner URL (Optional):</label> 
+                    <input type="text" id="img" placeholder="Enter your image URL">
+                </div>
+                
+                <button type="submit" class="text large bold post-button">Add Post</button>
+            </form>
+
+        <p id="add-message"></p>
+        <script src="/js/add-post.js"></script>
     </main>
     <footer>
         <p class="text small bold">COPYRIGHT © QueenWoofie AT NOROFF EDUCATION</p>

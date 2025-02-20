@@ -56,7 +56,7 @@ function displayCarousel(posts) {
                 <div class="carousel-overlay">
                     <h1>${post.title}</h1>
                     <p class="text small">${postSnippet}</p>
-                    <button class="text small" onclick="window.location.href='/post/index.html?id=${post.id}'">Read More</button>
+                    <button class="text small bold" onclick="window.location.href='/post/index.html?id=${post.id}'">Read More</button>
                 </div>
             </div>
         `;
@@ -124,7 +124,7 @@ function displayPostGrid(posts) {
                     <h2>${post.title}</h2>
                 </div>
             </div>
-            <button class="text smallh" onclick="window.location.href='/post/index.html?id=${post.id}'">Read More</button>
+            <button class="text small bold" onclick="window.location.href='/post/index.html?id=${post.id}'">Read More</button>
         `;
 
         postGrid.appendChild(postElement);

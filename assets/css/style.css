@@ -201,6 +201,12 @@ input {
     width: 100%;
 }
 
+#carousel p {
+    width: 40%;
+    justify-self: center;
+    padding: 10px 0px;
+}
+
 .carousel-nav {
     position: absolute;
     top: 50%;
@@ -377,9 +383,13 @@ input {
 .post-content {
     width: 100%;
     margin: 20px auto;
-    padding: 20px;
+    padding: 20px 60px;
     font-size: 1.2rem;
     line-height: 1.6;
+}
+
+.post-content p {
+    white-space: break-spaces;
 }
 
 .back-button {
@@ -407,7 +417,7 @@ input {
 
 /* Add / Edit Post */
 
-#add-post-form {
+#add-post-form, #edit-post-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -448,10 +458,16 @@ input {
     outline: none;
 }
 
-#add-post-form input, #add-post-form label {
+#add-post-form input, #add-post-form label, #edit-post-form label, #edit-post-form input {
     width: 100%;
 }
 
+.edit-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/*
 h1 { font-size: 48px; font-family: 'Poppins', sans-serif; }
 h2 { font-size: 32px; font-family: 'Poppins', sans-serif; }
 h3 { font-size: 24px; font-family: 'Poppins', sans-serif; }
@@ -469,6 +485,13 @@ pre, code {
     background: #f4f4f4;
     padding: 5px;
     border-radius: 5px;
+}
+*/
+
+@media (max-width: 940px) {
+    .carousel-banner {
+        height: 400px;
+    }
 }
 
 @media (max-width: 750px) {
