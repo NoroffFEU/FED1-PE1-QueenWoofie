@@ -81,7 +81,7 @@ async function loginUser() {
 
         document.getElementById("login-message").innerText = "Login successful!";
         setTimeout(() => {
-            window.location.href = "/index.html";
+            window.location.href = "../index.html";
         }, 1000);
 
     } catch (error) {

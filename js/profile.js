@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         profileMenu.appendChild(logoutButton);
     } else {
         profileMenu.innerHTML = `
-            <a class="large text" href="/account/login.html">Login</a>
-            <a class="large text" href="/account/register.html">Register</a>
+            <a class="large text" href="../account/login.html">Login</a>
+            <a class="large text" href="../account/register.html">Register</a>
         `;
     }
 

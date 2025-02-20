@@ -17,7 +17,7 @@ function isLoggedIn() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        window.location.href = "/account/login.html";
+        window.location.href = "../account/login.html";
     }
 }
 
@@ -25,7 +25,7 @@ function logoutUser() {
     localStorage.removeItem("loginData");
     localStorage.removeItem("accessToken");
     localStorage.removeItem("apiKey");
-    window.location.href = "/account/login.html";
+    window.location.href = "../account/login.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

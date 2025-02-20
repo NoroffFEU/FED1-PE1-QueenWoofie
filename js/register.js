@@ -95,7 +95,7 @@ async function registerUser() {
             console.log("API Key created and stored:", apiKey);
         }
         setTimeout(() => {
-            window.location.href = "/account/login.html";
+            window.location.href = "../account/login.html";
         }, 2000);
 
     } catch (error) {
