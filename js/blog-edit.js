@@ -55,7 +55,7 @@ async function updatePost() {
     
     const updatedData = {
         title: document.getElementById("title").value.trim(),
-        body: document.getElementById("body").value.trim(),
+        body: document.getElementById("body-editor").value.trim(),
         media: {
             url: document.getElementById("image").value.trim(),
             alt: "User updated image"
