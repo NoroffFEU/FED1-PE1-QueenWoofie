@@ -7,9 +7,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    const pathPrefix = window.location.pathname === "/index.html" || window.location.pathname === "/"
-        ? "./account/"
-        : "../account/";
+    const repoName = "/FED1-PE1-QueenWoofie";
+    const basePath = `${window.location.origin}${repoName}`;
+
+    const pathPrefix = window.location.pathname === `${repoName}/index.html` || window.location.pathname === `${repoName}/`
+    ? `${basePath}/account/`
+    : `${basePath}/account/`; 
 
     profileMenu.innerHTML = "";
 
