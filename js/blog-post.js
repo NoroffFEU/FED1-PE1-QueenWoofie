@@ -33,7 +33,7 @@ function displayPost(post) {
     const postContainer = document.getElementById("post-container");
     if (!postContainer) return;
 
-    const imageUrl = post.media?.url || "assets/img/placeholder-large.png";
+    const imageUrl = post.media?.url || "../assets/img/placeholder-large.png";
 
     const authorName = post.author?.name || "Unknown Author";
     
@@ -69,7 +69,7 @@ function displayPost(post) {
         editButton.innerText = "Edit Post";
         editButton.classList.add("edit-button", "text", "bold", "small");
         editButton.onclick = () => {
-            window.location.href = `/post/edit.html?id=${post.id}`;
+            window.location.href = `../post/edit.html?id=${post.id}`;
         };
         
         editButtonContainer.appendChild(editButton);
