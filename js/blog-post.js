@@ -33,7 +33,7 @@ function displayPost(post) {
     const postContainer = document.getElementById("post-container");
     if (!postContainer) return;
 
-    const imageUrl = post.media?.url || "/assets/img/placeholder-large.png";
+    const imageUrl = post.media?.url || "assets/img/placeholder-large.png";
 
     const authorName = post.author?.name || "Unknown Author";
     
