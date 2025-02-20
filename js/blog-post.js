@@ -13,7 +13,7 @@ async function loadBlogPost(postId) {
     const url = `https://v2.api.noroff.dev/blog/posts/QueenWoofie/${postId}`;
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: "reload" });
         if (!response.ok) {
             throw new Error("Failed to fetch the blog post.");
         }
@@ -33,7 +33,7 @@ function displayPost(post) {
     const postContainer = document.getElementById("post-container");
     if (!postContainer) return;
 
-    const imageUrl = post.media?.url || "../assets/img/placeholder-large.png";
+    const imageUrl = (post.media && post.media.url) ? post.media.url : "../assets/img/placeholder-large.png";
 
     const authorName = post.author?.name || "Unknown Author";
     

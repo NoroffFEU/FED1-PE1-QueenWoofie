@@ -29,10 +29,11 @@ async function loadPostForEditing(postId) {
         document.getElementById("title").value = post.title;
         document.getElementById("body-editor").value = post.body;
 
+        const imageInput = document.getElementById("img");
         if (post.media && post.media.url) {
-            document.getElementById("img").value = post.media.url;
+            imageInput.value = post.media.url;
         } else {
-            document.getElementById("img").value = "";
+            imageInput.value = "";
         }
 
     } catch (error) {
@@ -50,17 +51,31 @@ async function updatePost() {
     const { username, accessToken, apiKey } = getUserInfo();
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get("id");
+    
+    const titleInput = document.getElementById("title");
+    const bodyInput = document.getElementById("body-editor");
+    const imageInput = document.getElementById("img");
+
+    if (!titleInput || !bodyInput) {
+        console.error("⚠️ One or more input fields are missing.");
+        document.getElementById("edit-message").innerText = "⚠️ Error: Missing input fields.";
+        return;
+    }
+
+    const title = titleInput.value.trim();
+    const body = bodyInput.value.trim();
+    const imageUrl = imageInput ? imageInput.value.trim() : "";
+
+    const updatedData = {
+        title,
+        body
+    };
+
+    if (imageUrl) {
+        updatedData.media = { url: imageUrl, alt: "User-updated image" };
+    }
 
     const url = `https://v2.api.noroff.dev/blog/posts/${username}/${postId}`;
-    
-    const updatedData = {
-        title: document.getElementById("title").value.trim(),
-        body: document.getElementById("body-editor").value.trim(),
-        media: {
-            url: document.getElementById("img").value.trim(),
-            alt: "User updated image"
-        }
-    };
 
     try {
         const response = await fetch(url, {
@@ -113,7 +128,7 @@ async function deletePost() {
         if (!response.ok) throw new Error("Failed to delete post.");
 
         alert("Post deleted successfully!");
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
 
     } catch (error) {
         console.error("Error deleting post:", error);
