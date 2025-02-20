@@ -53,7 +53,7 @@ async function createNewPost() {
         if (response.ok) {
             document.getElementById("add-message").innerText = "Post created successfully!";
             setTimeout(() => {
-                window.location.href = `/post/index.html?id=${json.data.id}`;
+                window.location.href = `../post/index.html?id=${json.data.id}`;
             }, 1500);
         } else {
             document.getElementById("add-message").innerText = json.message || "Failed to add post.";

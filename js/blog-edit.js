@@ -78,7 +78,7 @@ async function updatePost() {
         document.getElementById("edit-message").innerText = "Post updated successfully!";
         
         setTimeout(() => {
-            window.location.href = `/post/index.html?id=${postId}`;
+            window.location.href = `../post/index.html?id=${postId}`;
         }, 1500);
 
     } catch (error) {
