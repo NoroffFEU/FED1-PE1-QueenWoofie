@@ -44,7 +44,7 @@ function displayCarousel(posts) {
     const indicators = document.querySelector(".carousel-indicators");
 
     posts.forEach((post, index) => {
-        const imageUrl = post.media?.url || "/assets/img/placeholder-large.png";
+        const imageUrl = post.media?.url || "assets/img/placeholder-large.png";
         const postSnippet = post.body.length > 150 ? post.body.substring(0, 150) + "..." : post.body;
 
         const postElement = document.createElement("div");
@@ -56,14 +56,13 @@ function displayCarousel(posts) {
                 <div class="carousel-overlay">
                     <h1>${post.title}</h1>
                     <p class="text small">${postSnippet}</p>
-                    <button class="text small bold" onclick="window.location.href='/post/index.html?id=${post.id}'">Read More</button>
+                    <button class="text small bold" onclick="window.location.href='post/index.html?id=${post.id}'">Read More</button>
                 </div>
             </div>
         `;
 
         carouselItems.appendChild(postElement);
 
-        // ✅ Add dot indicators
         const dot = document.createElement("span");
         dot.classList.add("indicator");
         if (index === 0) dot.classList.add("active");
@@ -74,7 +73,6 @@ function displayCarousel(posts) {
     setupCarousel(posts.length);
 }
 
-// ✅ Function to handle carousel navigation
 let currentSlide = 0;
 
 function setupCarousel(totalSlides) {
@@ -87,9 +85,9 @@ function moveCarouselTo(index) {
     const dots = document.querySelectorAll(".indicator");
 
     if (index < 0) {
-        currentSlide = slides.length - 1; // Loop back to the last slide
+        currentSlide = slides.length - 1;
     } else if (index >= slides.length) {
-        currentSlide = 0; // Loop to the first slide
+        currentSlide = 0;
     } else {
         currentSlide = index;
     }
@@ -103,17 +101,16 @@ function moveCarouselTo(index) {
     });
 }
 
-// ✅ Function to display a grid of blog posts
 function displayPostGrid(posts) {
     const postGrid = document.querySelector("#post-grid");
     if (!postGrid) return;
 
-    postGrid.innerHTML = ""; // Clear old content
+    postGrid.innerHTML = "";
 
     posts.forEach(post => {
         if (!post.id) return;
 
-        const imageUrl = post.media?.url || "/assets/img/placeholder-small.png";
+        const imageUrl = post.media?.url || "assets/img/placeholder-small.png";
 
         const postElement = document.createElement("div");
         postElement.classList.add("post-thumbnail");
@@ -124,7 +121,7 @@ function displayPostGrid(posts) {
                     <h2>${post.title}</h2>
                 </div>
             </div>
-            <button class="text small bold" onclick="window.location.href='/post/index.html?id=${post.id}'">Read More</button>
+            <button class="text small bold" onclick="window.location.href='post/index.html?id=${post.id}'">Read More</button>
         `;
 
         postGrid.appendChild(postElement);
