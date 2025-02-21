@@ -69,7 +69,7 @@ function displayPost(post) {
     if (username === post.author?.name) {
         const editButton = document.createElement("button");
         editButton.innerText = "Edit Post";
-        editButton.classList.add("edit-button", "text", "bold", "small, icon, pen");
+        editButton.classList.add("edit-button", "text", "bold", "small", "icon", "pen");
         editButton.onclick = () => {
             window.location.href = `../post/edit.html?id=${post.id}`;
         };
