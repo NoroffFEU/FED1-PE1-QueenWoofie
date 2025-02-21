@@ -425,7 +425,7 @@ input {
     gap: 20px;
 }
 
-.post-button {
+.post-button, #share-button {
     width: fit-content;
     padding: 10px;
 }
@@ -465,6 +465,10 @@ input {
 .edit-button-container {
     display: flex;
     justify-content: center;
+}
+
+.hidden {
+    display: none;
 }
 
 /*

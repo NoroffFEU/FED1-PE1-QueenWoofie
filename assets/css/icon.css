@@ -65,6 +65,12 @@
     margin-right: 8px;
 }
 
+.l-arrow::before {
+    font: var(--fa-font-solid);
+    content: '\f060';
+    margin-right: 8px;
+}
+
 .markbold::before {
     font: var(--fa-font-solid);
     content: '\f032';
@@ -80,5 +86,11 @@
 .markdown::before {
     font: var(--fa-font-solid);
     content: '\f0d7';
+    margin-right: 8px;
+}
+
+.link::before {
+    font: var(--fa-font-solid);
+    content: '\f0c1';
     margin-right: 8px;
 }

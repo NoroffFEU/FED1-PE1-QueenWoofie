@@ -53,10 +53,12 @@ function displayPost(post) {
                     <p class="text small">Published: ${publishedDate}</p>
                     <p class="text small">Last Edited: ${updatedDate}</p>
                 </div>
+                <button id="share-button" class="text small bold icon link">Share</button>
+                <p id="copy-message" class="hidden text small">✅ Link copied!</p>
             </div>
         </div>
         <article class="post-content">
-            <p class=>${post.body}</p>
+            <p>${post.body}</p>
         </article>
     `;
 
@@ -67,7 +69,7 @@ function displayPost(post) {
     if (username === post.author?.name) {
         const editButton = document.createElement("button");
         editButton.innerText = "Edit Post";
-        editButton.classList.add("edit-button", "text", "bold", "small");
+        editButton.classList.add("edit-button", "text", "bold", "small, icon, pen");
         editButton.onclick = () => {
             window.location.href = `../post/edit.html?id=${post.id}`;
         };
@@ -75,4 +77,20 @@ function displayPost(post) {
         editButtonContainer.appendChild(editButton);
         postContainer.appendChild(editButtonContainer);
     }
+
+    document.getElementById("share-button").addEventListener("click", () => copyPostLink(post.id));
+}
+
+function copyPostLink(postId) {
+    const postUrl = `${window.location.origin}/post/index.html?id=${postId}`;
+    navigator.clipboard.writeText(postUrl).then(() => {
+        const message = document.getElementById("copy-message");
+        message.classList.remove("hidden");
+
+        setTimeout(() => {
+            message.classList.add("hidden");
+        }, 2000);
+    }).catch(error => {
+        console.error("Failed to copy link:", error);
+    });
 }
