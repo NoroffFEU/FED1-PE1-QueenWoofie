@@ -82,7 +82,7 @@ function displayPost(post) {
 }
 
 function copyPostLink(postId) {
-    const postUrl = `${window.location.origin}/post/index.html?id=${postId}`;
+    const postUrl = `${window.location.origin}${window.location.pathname.split("/").slice(0, -2).join("/")}/post/index.html?id=${postId}`;
     navigator.clipboard.writeText(postUrl).then(() => {
         const message = document.getElementById("copy-message");
         message.classList.remove("hidden");
