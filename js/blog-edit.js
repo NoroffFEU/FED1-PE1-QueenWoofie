@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get("id");
-
-    console.log("Post ID:", postId);
     
     if (!postId) {
         document.getElementById("edit-message").innerText = "Post not found.";
@@ -23,8 +21,6 @@ async function loadPostForEditing(postId) {
 
         const data = await response.json();
         const post = data.data;
-
-        console.log("Loaded Post Data:", post);
 
         document.getElementById("title").value = post.title;
         document.getElementById("body-editor").value = post.body;

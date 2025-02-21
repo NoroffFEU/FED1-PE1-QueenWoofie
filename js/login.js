@@ -17,7 +17,6 @@ async function loginUser() {
     };
 
     try {
-        console.log("Sending login request...");
         const response = await fetch(loginUrl, {
             method: "POST",
             headers: {
@@ -28,7 +27,6 @@ async function loginUser() {
         });
 
         const json = await response.json();
-        console.log("Full API Response:", json);
 
         if (!response.ok) {
             console.error("Login failed:", json.message || "Unknown error");
@@ -44,13 +42,9 @@ async function loginUser() {
         const username = json.data.name;
         const email = json.data.email;
 
-        console.log("Access Token Received:", accessToken);
-
         const loginData = { username, email, accessToken };
         localStorage.setItem("loginData", JSON.stringify(loginData));
         localStorage.setItem("accessToken", accessToken);
-
-        console.log("Login Data Stored in localStorage:", loginData);
 
         let apiKey = localStorage.getItem("apiKey");
 
@@ -68,7 +62,6 @@ async function loginUser() {
             });
 
             const apiKeyData = await apiKeyResponse.json();
-            console.log("🔹 API Key Response:", apiKeyData);
 
             if (!apiKeyResponse.ok || !apiKeyData.data || !apiKeyData.data.key) {
                 throw new Error("Failed to create API key.");
@@ -76,7 +69,6 @@ async function loginUser() {
 
             apiKey = apiKeyData.data.key;
             localStorage.setItem("apiKey", apiKey);
-            console.log("API Key Stored:", apiKey);
         }
 
         document.getElementById("login-message").innerText = "Login successful!";

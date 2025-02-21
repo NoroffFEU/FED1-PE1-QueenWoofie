@@ -15,8 +15,6 @@ async function createNewPost() {
         return;
     }
 
-    console.log("✅ Access Token & API Key Found.");
-
     const url = `https://v2.api.noroff.dev/blog/posts/${username}`;
 
     const title = document.getElementById("title").value.trim();
@@ -48,7 +46,6 @@ async function createNewPost() {
         });
 
         const json = await response.json();
-        console.log("✅ Server Response:", json);
 
         if (response.ok) {
             document.getElementById("add-message").innerText = "Post created successfully!";

@@ -43,8 +43,6 @@ async function registerUser() {
         body: JSON.stringify(userData)
     };
 
-    console.log("Sending data:", userData);
-
     try {
         const response = await fetch(registerUrl, options);
         const json = await response.json();
@@ -66,8 +64,6 @@ async function registerUser() {
 
         localStorage.setItem("loginData", JSON.stringify(loginData));
         localStorage.setItem("accessToken", accessToken);
-
-        console.log("User registered and stored in localStorage:", loginData);
 
         let apiKey = localStorage.getItem("apiKey");
 
@@ -92,7 +88,6 @@ async function registerUser() {
             apiKey = apiKeyData.data.key;
 
             localStorage.setItem("apiKey", apiKey);
-            console.log("API Key created and stored:", apiKey);
         }
         setTimeout(() => {
             window.location.href = "../account/login.html";

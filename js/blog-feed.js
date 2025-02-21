@@ -15,8 +15,6 @@ async function loadBlogPosts() {
         const data = await response.json();
         const posts = data.data;
 
-        console.log("Fetched Posts:", allPosts);
-
         displayCarousel(posts.slice(0, 3));
         displayPostGrid(posts.slice(0, 12));
 
