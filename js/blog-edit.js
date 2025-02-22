@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function loadPostForEditing(postId) {
+    const { username } = getUserInfo();
     const url = `https://v2.api.noroff.dev/blog/posts/${username}/${postId}`;
 
     try {
