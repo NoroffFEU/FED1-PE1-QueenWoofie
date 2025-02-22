@@ -65,9 +65,6 @@ function displayPost(post) {
 
     const editButtonContainer = document.createElement("div");
     editButtonContainer.classList.add("edit-button-container");
-
-    console.log("Logged in username:", username);
-    console.log("Post author:", post.author?.name);
     
     const { username } = getUserInfo();
     if (username === post.author?.name && username !== "QueenWoofie") {
