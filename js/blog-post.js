@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function loadBlogPost(postId) {
-    const url = `https://v2.api.noroff.dev/blog/posts/QueenWoofie/${postId}`;
+    const { username } = getUserInfo();
+    const url = `https://v2.api.noroff.dev/blog/posts/${username}/${postId}`;
 
     try {
         const response = await fetch(url, { cache: "reload" });
@@ -66,7 +67,7 @@ function displayPost(post) {
     editButtonContainer.classList.add("edit-button-container");
     
     const { username } = getUserInfo();
-    if (username === post.author?.name) {
+    if (username === post.author?.name && username !== "QueenWoofie") {
         const editButton = document.createElement("button");
         editButton.innerText = "Edit Post";
         editButton.classList.add("edit-button", "text", "bold", "small", "icon", "pen");

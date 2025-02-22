@@ -1,13 +1,11 @@
 function getUserInfo() {
     const loginData = JSON.parse(localStorage.getItem("loginData")) || {};
     const userInfo = {
-        username: loginData.username || null,
+        username: loginData.username || "QueenWoofie",
         email: loginData.email || null,
         accessToken: loginData.accessToken || localStorage.getItem("accessToken"),
         apiKey: localStorage.getItem("apiKey"),
     };
-
-    console.log("Retrieved User Info:", userInfo);
     return userInfo;
 }
 

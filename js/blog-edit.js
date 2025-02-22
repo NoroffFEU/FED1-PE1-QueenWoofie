@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function loadPostForEditing(postId) {
-    const url = `https://v2.api.noroff.dev/blog/posts/QueenWoofie/${postId}`;
+    const url = `https://v2.api.noroff.dev/blog/posts/${username}/${postId}`;
 
     try {
         const response = await fetch(url);

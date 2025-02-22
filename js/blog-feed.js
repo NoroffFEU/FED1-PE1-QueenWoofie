@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 let allPosts = [];
 
 async function loadBlogPosts() {
-    const url = "https://v2.api.noroff.dev/blog/posts/QueenWoofie";
+    const { username } = getUserInfo();
+    const url = `https://v2.api.noroff.dev/blog/posts/${username}`;
     try {
         const response = await fetch(url);
         if (!response.ok) {
