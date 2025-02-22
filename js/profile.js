@@ -7,13 +7,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    const repoName = "/FED1-PE1-QueenWoofie";
-    const basePath = `${window.location.origin}${repoName}`;
-
-    const pathPrefix = window.location.pathname === `${repoName}/index.html` || window.location.pathname === `${repoName}/`
-    ? `${basePath}/account/`
-    : `${basePath}/account/`; 
-
     profileMenu.innerHTML = "";
 
     if (username && accessToken) {
@@ -29,8 +22,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         profileMenu.appendChild(logoutButton);
     } else {
         profileMenu.innerHTML = `
-            <a class="large text" href="${pathPrefix}login.html">Login</a>
-            <a class="large text" href="${pathPrefix}register.html">Register</a>
+            <a class="large text" href="../account/login.html">Login</a>
+            <a class="large text" href="../account/register.html">Register</a>
         `;
     }
 
