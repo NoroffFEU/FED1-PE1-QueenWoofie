@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function loadBlogPost(postId) {
     const { username } = getUserInfo();
-    console.log("Logged in username:", username); // Debug log
-    const url = `https://v2.api.noroff.dev/blog/posts/${postId}`;
+    const url = `https://v2.api.noroff.dev/blog/posts/${username}/${postId}`;
 
     try {
         const response = await fetch(url, { cache: "reload" });
@@ -22,9 +21,8 @@ async function loadBlogPost(postId) {
 
         const data = await response.json();
         const post = data.data;
-        console.log("Fetched post:", post); // Debug log
 
-        displayPost(post, username);
+        displayPost(post);
 
     } catch (error) {
         console.error("Error loading blog post:", error);
@@ -32,7 +30,7 @@ async function loadBlogPost(postId) {
     }
 }
 
-function displayPost(post, loggedInUsername) {
+function displayPost(post) {
     const postContainer = document.getElementById("post-container");
     if (!postContainer) return;
 
@@ -68,10 +66,8 @@ function displayPost(post, loggedInUsername) {
     const editButtonContainer = document.createElement("div");
     editButtonContainer.classList.add("edit-button-container");
     
-    console.log("Logged in username:", loggedInUsername); // Debug log
-    console.log("Post author:", post.author?.name); // Debug log
-
-    if (loggedInUsername === post.author?.name && loggedInUsername !== "QueenWoofie") {
+    const { username } = getUserInfo();
+    if (username === post.author?.name && username !== "QueenWoofie") {
         const editButton = document.createElement("button");
         editButton.innerText = "Edit Post";
         editButton.classList.add("edit-button", "text", "bold", "small", "icon", "pen");
