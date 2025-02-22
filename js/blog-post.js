@@ -67,7 +67,7 @@ function displayPost(post) {
     editButtonContainer.classList.add("edit-button-container");
     
     const { username } = getUserInfo();
-    if (username === post.author?.name && username !== "QueenWoofie") {
+    if (username === "QueenWoofie") {
         const editButton = document.createElement("button");
         editButton.innerText = "Edit Post";
         editButton.classList.add("edit-button", "text", "bold", "small", "icon", "pen");
