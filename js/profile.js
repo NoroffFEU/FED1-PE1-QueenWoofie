@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     profileMenu.innerHTML = "";
 
     if (username && accessToken) {
+        const userInfo = document.createElement("p");
+        userInfo.innerText = `Logged in as: ${username}`;
+        userInfo.classList.add("large", "text", "username-display");
+        profileMenu.appendChild(userInfo);
+
         const logoutButton = document.createElement("button");
         logoutButton.innerText = "Logout";
         logoutButton.classList.add("large", "text", "bold");
